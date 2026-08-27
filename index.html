@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Alight Motion ブックマーク生成</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <p class="eyebrow">ALIGHT MOTION XML TOOL</p>
+      <h1>ブックマーク生成</h1>
+      <p class="intro">BPMに合わせたブックマーク付きXMLを、端末内だけで作成します。</p>
+    </header>
+
+    <section class="card mode-card">
+      <label class="file-picker" for="input-file">
+        <span>既存XMLを編集する</span>
+        <strong id="file-name">ファイルを選択</strong>
+        <input id="input-file" type="file" accept=".xml,text/xml,application/xml">
+      </label>
+      <p class="hint">選ばない場合は、新規XMLを作成します。選んだXMLは端末外へ送信されません。</p>
+    </section>
+
+    <section class="card" id="new-settings">
+      <h2>新規XMLの設定</h2>
+      <div class="grid two">
+        <label>種類
+          <select id="project-type"><option>プロジェクト</option><option>要素</option></select>
+        </label>
+        <label>プロジェクト名
+          <input id="title" value="BPM Bookmarks">
+        </label>
+        <label>横幅<input id="width" type="number" min="1" value="1920"></label>
+        <label>高さ<input id="height" type="number" min="1" value="1080"></label>
+        <label>FPS<input id="fps" type="number" min="1" step="0.001" value="60"></label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>ブックマーク</h2>
+      <div class="grid two">
+        <label>BPM<input id="bpm" type="number" min="0.001" step="0.001" value="130"></label>
+        <label>開始位置（ms）<input id="start-ms" type="number" min="0" step="0.001" value="0"></label>
+        <label>拍数<input id="beats" type="number" min="1" step="1" value="32"></label>
+        <label>秒数（拍数と連動）<input id="seconds" type="number" min="0" step="0.001" value="14.769"></label>
+        <label>1拍あたりの分割<input id="subdivision" type="number" min="1" step="1" value="1"></label>
+      </div>
+      <label class="check"><input id="snap" type="checkbox" checked> プロジェクトのFPSにフレーム単位で合わせる</label>
+      <label class="check" id="replace-wrap"><input id="replace" type="checkbox" checked> 既存のブックマークをすべて置き換える</label>
+    </section>
+
+    <button id="generate" type="button">XMLを生成してダウンロード</button>
+    <p id="status" class="status" aria-live="polite">条件を入力して生成してください。</p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

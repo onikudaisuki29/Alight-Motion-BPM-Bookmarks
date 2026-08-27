@@ -1,0 +1,24 @@
+:root { color-scheme: dark; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #0c0d12; color: #f5f4fa; }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: radial-gradient(circle at 20% 0%, #222047, transparent 38rem), #0c0d12; }
+.app { width: min(100%, 740px); margin: 0 auto; padding: max(28px, env(safe-area-inset-top)) 18px max(38px, env(safe-area-inset-bottom)); }
+header { padding: 8px 4px 20px; }
+.eyebrow { color: #aaa4ff; font-size: .72rem; font-weight: 700; letter-spacing: .13em; margin: 0 0 6px; }
+h1 { font-size: clamp(1.85rem, 7vw, 2.5rem); margin: 0; letter-spacing: -.04em; }
+.intro, .hint { color: #b8b6c4; line-height: 1.55; }
+.intro { margin: 8px 0 0; }
+.card { background: #171820d9; border: 1px solid #2b2d3a; border-radius: 18px; margin: 14px 0; padding: 18px; box-shadow: 0 12px 32px #0003; }
+h2 { font-size: 1rem; margin: 0 0 14px; }
+.grid { display: grid; gap: 13px; }
+.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+label { color: #d8d6e3; display: grid; font-size: .86rem; font-weight: 600; gap: 6px; }
+input, select { appearance: none; width: 100%; padding: 11px 12px; border-radius: 10px; border: 1px solid #3d4050; background: #101117; color: #fff; font: inherit; }
+input:focus, select:focus { border-color: #8b83ff; outline: 3px solid #8b83ff33; }
+.file-picker { align-items: center; background: #24253a; border: 1px dashed #7671b7; border-radius: 12px; cursor: pointer; display: flex; gap: 10px; padding: 14px; }
+.file-picker span { color: #c5c0ff; }.file-picker strong { color: #fff; font-size: .9rem; margin-left: auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }.file-picker input { display: none; }.hint { font-size: .8rem; margin: 12px 0 0; }
+.check { align-items: center; background: #11121a; border: 1px solid #353747; border-radius: 10px; cursor: pointer; display: flex; font-weight: 600; margin-top: 11px; padding: 11px 12px; transition: border-color .15s, background .15s; }
+.check:has(input:checked) { background: #26224a; border-color: #9087ff; color: #fff; }
+.check input { appearance: auto; -webkit-appearance: checkbox; accent-color: #8b83ff; flex: 0 0 auto; height: 20px; margin: 0; padding: 0; width: 20px; }
+#generate { background: linear-gradient(135deg, #9c8dff, #6e60e9); border: 0; border-radius: 13px; color: white; cursor: pointer; font: inherit; font-weight: 800; padding: 16px; width: 100%; box-shadow: 0 10px 24px #594ce855; }
+#generate:active { transform: translateY(1px); }.status { color: #bab7cb; font-size: .88rem; min-height: 1.4em; text-align: center; }.status.error { color: #ff9f9f; }
+@media (max-width: 520px) { .two { grid-template-columns: 1fr; }.card { border-radius: 15px; padding: 15px; } }
